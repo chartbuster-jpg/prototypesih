@@ -13,19 +13,19 @@ The system converts an unstructured procurement requirement into ranked Indian S
 ### Core Workflow
 
 **User Query / PDF / DOCX**
-↓
+->
 **Language Detection & Translation**
-↓
+->
 **BM25 Keyword Retrieval + FAISS Semantic Retrieval**
-↓
+->
 **Candidate Merging**
-↓
+->
 **Cross-Encoder Reranking**
-↓
+->
 **Top-K Recommended Standards**
-↓
+->
 **Version + Certification + Allied Standards**
-↓
+->
 **Final Results on Dashboard**
 
 The pipeline follows:
