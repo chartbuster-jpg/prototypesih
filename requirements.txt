@@ -6,7 +6,11 @@ pydantic>=2.11.0
 pydantic-settings>=2.7.0
 
 # Database
+<<<<<<< HEAD
 sqlalchemy==2.0.36
+=======
+sqlalchemy>=2.0.40
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
 # Optional PostgreSQL driver: pip install -r requirements-postgres.txt
 alembic==1.14.0
 

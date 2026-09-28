@@ -47,6 +47,7 @@ def find_similar_standards(db: Session, standard: StandardModel, top_k: int = 3)
     query = f"{standard.title} {standard.domain} {' '.join(standard.tags)}"
     hits = engine.recommend(query, top_k=top_k + 5)
     rows = [row for row, _score in hits if row.id != standard.id][:top_k]
+<<<<<<< HEAD
     if not rows:
         return (
             db.query(StandardModel)
@@ -55,6 +56,16 @@ def find_similar_standards(db: Session, standard: StandardModel, top_k: int = 3)
             .all()
         )
     return rows
+=======
+    if rows:
+        return rows
+    return (
+        db.query(StandardModel)
+        .filter(StandardModel.domain == standard.domain, StandardModel.id != standard.id)
+        .limit(top_k)
+        .all()
+    )
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
 
 
 def get_allied_standards(db: Session, standard: StandardModel) -> AlliedStandards:

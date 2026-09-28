@@ -11,17 +11,29 @@ class StandardModel(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     is_number: Mapped[str] = mapped_column(String(64), index=True)
+<<<<<<< HEAD
     part: Mapped[str] = mapped_column(String(64), nullable=True)
+=======
+    part: Mapped[str | None] = mapped_column(String(64), nullable=True)
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
     title: Mapped[str] = mapped_column(String(512))
     domain: Mapped[str] = mapped_column(String(128), index=True)
     publication_date: Mapped[str] = mapped_column(String(32))
     amendment_history_json: Mapped[str] = mapped_column(Text, default="[]")
+<<<<<<< HEAD
     superseded_by: Mapped[str] = mapped_column(String(256), nullable=True)
+=======
+    superseded_by: Mapped[str | None] = mapped_column(String(256), nullable=True)
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
     normative_references_json: Mapped[str] = mapped_column(Text, default="[]")
     certification: Mapped[str] = mapped_column(String(256))
     abstract: Mapped[str] = mapped_column(Text)
     tags_json: Mapped[str] = mapped_column(Text, default="[]")
+<<<<<<< HEAD
     pdf_url: Mapped[str] = mapped_column(String(512), nullable=True)
+=======
+    pdf_url: Mapped[str | None] = mapped_column(String(512), nullable=True)
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
     search_text: Mapped[str] = mapped_column(Text, index=False)
 
     @property

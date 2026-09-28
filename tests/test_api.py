@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from fastapi.testclient import TestClient
 
 from backend.app.main import app
@@ -6,11 +7,18 @@ client = TestClient(app)
 
 
 def test_health():
+=======
+def test_health(client):
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
     r = client.get("/health")
     assert r.status_code == 200
 
 
+<<<<<<< HEAD
 def test_recommend_standards():
+=======
+def test_recommend_standards(client):
+>>>>>>> 85c00f4ca2c3ff122c08038ca4cce0246184298d
     r = client.post(
         "/api/recommend-standards",
         json={"query": "Portland cement 53 grade for building works", "top_k": 3},
